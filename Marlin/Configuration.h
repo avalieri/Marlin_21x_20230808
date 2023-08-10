@@ -74,8 +74,7 @@
 #endif
 
 // ANVA 2023-08-08
-// --> #define DIAG_JUMPERS_REMOVED
-
+// -Commented out-> #define DIAG_JUMPERS_REMOVED
 
 /**
  * Select the serial port on the board to use for communication with the host.
@@ -1282,7 +1281,6 @@
 // Recv: echo:  M201 X500.00 Y500.00 Z100.00 E5000.00
 #define DEFAULT_MAX_ACCELERATION      { 500, 500, 100, 5000 }
 
-
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
   #define MAX_ACCEL_EDIT_VALUES       { 6000, 6000, 200, 20000 } // ...or, set your own edit limits
@@ -1377,7 +1375,8 @@
 // #define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
 
 // Force the use of the probe for Z-axis homing
-//#define USE_PROBE_FOR_Z_HOMING
+// ANVA 2023-08-10
+#define USE_PROBE_FOR_Z_HOMING
 
 /**
  * Z_MIN_PROBE_PIN
@@ -1601,7 +1600,9 @@
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define PROBING_MARGIN 10
+// ANVA 2023-08-10
+//#define PROBING_MARGIN 10
+#define PROBING_MARGIN 25
 
 // X and Y axis travel speed (mm/min) between probes
 #define XY_PROBE_FEEDRATE (133*60)
@@ -2296,6 +2297,7 @@
  * - Allows Z homing only when XY positions are known and trusted.
  * - If stepper drivers sleep, XY homing may be required again before Z homing.
  */
+// ANVA 2023-08-10
 #define Z_SAFE_HOMING
 
 #if ENABLED(Z_SAFE_HOMING)
@@ -2762,7 +2764,10 @@
 // If you have a speaker that can produce tones, enable it here.
 // By default Marlin assumes you have a buzzer with a fixed frequency.
 //
-#define SPEAKER
+// ANVA 2023-08-10 Remove Speaker and Beeper for not having sounds at all (BEEPER_PIN is overridden)
+// #define SPEAKER
+// END ANVA 2023-08-10 BEEPER_PIN overridden
+#define BEEPER_PIN -1
 
 //
 // The duration and frequency for the UI feedback sound.
