@@ -74,7 +74,7 @@
 #endif
 
 // ANVA 2023-08-08
-// -Commented out-> #define DIAG_JUMPERS_REMOVED
+#define DIAG_JUMPERS_REMOVED
 
 /**
  * Select the serial port on the board to use for communication with the host.
