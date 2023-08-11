@@ -2764,9 +2764,9 @@
 // If you have a speaker that can produce tones, enable it here.
 // By default Marlin assumes you have a buzzer with a fixed frequency.
 //
-// ANVA 2023-08-10 Remove Speaker and Beeper for not having sounds at all (BEEPER_PIN is overridden)
+// ANVA 2023-08-10 Remove Speaker
 // #define SPEAKER
-// END ANVA 2023-08-10 BEEPER_PIN overridden
+// END ANVA 2023-08-10 BEEPER_PIN overridden: no sounds at all
 #define BEEPER_PIN -1
 
 //
